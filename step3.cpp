@@ -140,38 +140,38 @@ int main() {
 
     double time_nearest = 0, time_linear = 0, time_cubic = 0;
 
-    // int num_iterations = 1000;
+    int num_iterations = 1000;
 
-    // for (int i = 0; i < num_iterations; ++i) {
-    //     int64 start = cv::getTickCount();
+    for (int i = 0; i < num_iterations; ++i) {
+        int64 start = cv::getTickCount();
 
-    //     resizeImage(input, output_nearest, scale, INTER_NEAREST_1);
+        resizeImage(input, output_nearest, scale, INTER_NEAREST_1);
 
-    //     time_nearest += (cv::getTickCount() - start) / cv::getTickFrequency();
-    // }
+        time_nearest += (cv::getTickCount() - start) / cv::getTickFrequency();
+    }
 
-    // for (int i = 0; i < num_iterations; ++i) {
-    //     int64 start = cv::getTickCount();
+    for (int i = 0; i < num_iterations; ++i) {
+        int64 start = cv::getTickCount();
 
-    //     resizeImage(input, output_linear, scale, INTER_LINEAR_2);
+        resizeImage(input, output_linear, scale, INTER_LINEAR_2);
 
-    //     time_linear += (cv::getTickCount() - start) / cv::getTickFrequency();
-    // }
+        time_linear += (cv::getTickCount() - start) / cv::getTickFrequency();
+    }
 
-    // for (int i = 0; i < num_iterations; ++i) {
-    //     int64 start = cv::getTickCount();
+    for (int i = 0; i < num_iterations; ++i) {
+        int64 start = cv::getTickCount();
 
-    //     resizeImage(input, output_cubic, scale, INTER_CUBIC_3);
+        resizeImage(input, output_cubic, scale, INTER_CUBIC_3);
 
-    //     time_cubic += (cv::getTickCount() - start) / cv::getTickFrequency();
-    // }
+        time_cubic += (cv::getTickCount() - start) / cv::getTickFrequency();
+    }
 
 
-    // cout<<"Step 3"<<endl;
+    cout<<"Step 3"<<endl;
 
-    // cout << "Time taken for " << num_iterations << " iteration using custom INTER_NEAREST : " << time_nearest * 1000 << " ms" << std::endl;
-    // cout << "Time taken for " << num_iterations << " iteration using custom INTER_LINEAR : " << time_linear * 1000 << " ms" << std::endl;
-    // cout << "Time taken for " << num_iterations << " iteration using custom INTER_CUBIC : " << time_cubic * 1000 << " ms" << std::endl;
+    cout << "Time taken for " << num_iterations << " iteration using custom INTER_NEAREST : " << time_nearest * 1000 << " ms" << std::endl;
+    cout << "Time taken for " << num_iterations << " iteration using custom INTER_LINEAR : " << time_linear * 1000 << " ms" << std::endl;
+    cout << "Time taken for " << num_iterations << " iteration using custom INTER_CUBIC : " << time_cubic * 1000 << " ms" << std::endl;
 
     waitKey(0);
 
