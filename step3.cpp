@@ -85,16 +85,13 @@ double bicubicInterpolation(const Mat& input, double y, double x) {
     return interpolated_value;
 }
 
-// Function to resize an input image with different interpolation methods
+
 void resizeImage(const Mat& input, Mat& output, double scale, Interpolation method) {
-    // Calculate dimensions of resized image
     int new_height = static_cast<int>(round(input.rows * scale));
     int new_width = static_cast<int>(round(input.cols * scale));
 
-    // Resize output image
     output.create(new_height, new_width, CV_8UC1);
 
-    // Perform interpolation based on the selected method
     for (int i = 0; i < new_height; ++i) {
         for (int j = 0; j < new_width; ++j) {
             double old_i = i / scale;
@@ -115,7 +112,7 @@ void resizeImage(const Mat& input, Mat& output, double scale, Interpolation meth
 }
 
 int main() {
-    // Load image using OpenCV
+    
     Mat input = imread("/Users/abhishekgadekar/Desktop/deepedge/openCV/G178_2-1080.BMP", IMREAD_GRAYSCALE);
     if (input.empty()) {
         cout << "Could not open or find the image" << endl;
@@ -125,58 +122,56 @@ int main() {
     Mat output_nearest, output_linear, output_cubic;
     double scale = 0.5;
 
-    // Resize with INTER_NEAREST
+    
     resizeImage(input, output_nearest, scale, INTER_NEAREST_1);
 
-    // Resize with INTER_LINEAR
+   
     resizeImage(input, output_linear, scale, INTER_LINEAR_2);
 
-    // Resize with INTER_CUBIC
+   
     resizeImage(input, output_cubic, scale, INTER_CUBIC_3);
 
 
     cout<<"Reached till here"<<endl;
-    // Display resized images
+   
     imshow("Nearest Neighbor Interpolation", output_nearest);
     imshow("Linear Interpolation", output_linear);
     imshow("Cubic Interpolation", output_cubic);
 
     double time_nearest = 0, time_linear = 0, time_cubic = 0;
 
-    int num_iterations = 1000;
+    // int num_iterations = 1000;
 
-    for (int i = 0; i < num_iterations; ++i) {
-        int64 start = cv::getTickCount();
+    // for (int i = 0; i < num_iterations; ++i) {
+    //     int64 start = cv::getTickCount();
 
-        resizeImage(input, output_nearest, scale, INTER_NEAREST_1);
+    //     resizeImage(input, output_nearest, scale, INTER_NEAREST_1);
 
-        time_nearest += (cv::getTickCount() - start) / cv::getTickFrequency();
-    }
+    //     time_nearest += (cv::getTickCount() - start) / cv::getTickFrequency();
+    // }
 
-    for (int i = 0; i < num_iterations; ++i) {
-        int64 start = cv::getTickCount();
+    // for (int i = 0; i < num_iterations; ++i) {
+    //     int64 start = cv::getTickCount();
 
-        resizeImage(input, output_linear, scale, INTER_LINEAR_2);
+    //     resizeImage(input, output_linear, scale, INTER_LINEAR_2);
 
-        time_linear += (cv::getTickCount() - start) / cv::getTickFrequency();
-    }
+    //     time_linear += (cv::getTickCount() - start) / cv::getTickFrequency();
+    // }
 
-    for (int i = 0; i < num_iterations; ++i) {
-        int64 start = cv::getTickCount();
+    // for (int i = 0; i < num_iterations; ++i) {
+    //     int64 start = cv::getTickCount();
 
-        resizeImage(input, output_cubic, scale, INTER_CUBIC_3);
+    //     resizeImage(input, output_cubic, scale, INTER_CUBIC_3);
 
-        time_cubic += (cv::getTickCount() - start) / cv::getTickFrequency();
-    }
+    //     time_cubic += (cv::getTickCount() - start) / cv::getTickFrequency();
+    // }
 
-    // If we need average time, we can execute below lines
-    // time_nearest /= num_iterations;
-    // time_linear /= num_iterations;
-    // time_cubic /= num_iterations;
 
-    cout << "Time taken for " << num_iterations << " iteration using custom INTER_NEAREST : " << time_nearest * 1000 << " ms" << std::endl;
-    cout << "Time taken for " << num_iterations << " iteration using custom INTER_LINEAR : " << time_linear * 1000 << " ms" << std::endl;
-    cout << "Time taken for " << num_iterations << " iteration using custom INTER_CUBIC : " << time_cubic * 1000 << " ms" << std::endl;
+    // cout<<"Step 3"<<endl;
+
+    // cout << "Time taken for " << num_iterations << " iteration using custom INTER_NEAREST : " << time_nearest * 1000 << " ms" << std::endl;
+    // cout << "Time taken for " << num_iterations << " iteration using custom INTER_LINEAR : " << time_linear * 1000 << " ms" << std::endl;
+    // cout << "Time taken for " << num_iterations << " iteration using custom INTER_CUBIC : " << time_cubic * 1000 << " ms" << std::endl;
 
     waitKey(0);
 

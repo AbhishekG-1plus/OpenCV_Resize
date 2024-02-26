@@ -17,6 +17,7 @@ int main() {
     cv::resize(inputImage, resized_linear, cv::Size(width, height), 0, 0, cv::INTER_LINEAR);
     cv::resize(inputImage, resized_cubic, cv::Size(width, height), 0, 0, cv::INTER_CUBIC);
 
+    cv::imshow("Original Image",inputImage);
     cv::imshow("Resized Nearest", resized_nearest);
     cv::imshow("Resized Linear", resized_linear);
     cv::imshow("Resized Cubic", resized_cubic);
