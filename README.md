@@ -11,7 +11,7 @@
 <img width="959" alt="Screenshot 2024-02-26 at 10 59 25 PM" src="https://github.com/AbhishekG-1plus/OpenCV_Resize/assets/77354191/e4915294-2ffb-41e7-97bf-6ad59cfbcdd3">
 
 
-Overshooting of features/pixel values
+
 
 ## Step 2
 ```
@@ -31,9 +31,7 @@ For simplicity I have converted the image to grayscale and then applied the foll
 <img width="957" alt="Screenshot 2024-02-26 at 11 03 49 PM" src="https://github.com/AbhishekG-1plus/OpenCV_Resize/assets/77354191/d2945706-f5ee-4481-a75b-a8893a3a6e65">
 
 <img width="956" alt="Screenshot 2024-02-26 at 11 03 34 PM" src="https://github.com/AbhishekG-1plus/OpenCV_Resize/assets/77354191/deb8d1b2-2f4e-4105-914f-174ae6c4ee03">
-
-
-Gray scale image forced the cubic interpolation to overshoot pixel values which is clearly seen above. My naive implementation is also under optimized. I am exploring a vectorized code  that may perform better but experienced too many errors.
+Overshooting of features/pixel values. Gray scale image forced the cubic interpolation to overshoot pixel values which is clearly seen above. My naive implementation is also under optimized. I am exploring a vectorized code  that may perform better but experienced too many errors.
 
 Performance of my naive implementation :
 
