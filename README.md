@@ -1,5 +1,5 @@
 
-# DeepEdge_OpenCV_Resize
+# Custom_OpenCV_Resize_Function
 
 ## Step1
 <img width="958" alt="Screenshot 2024-02-26 at 11 01 13 PM" src="https://github.com/AbhishekG-1plus/OpenCV_Resize/assets/77354191/99eb1772-b2e9-44ea-b825-c802780e6552">
